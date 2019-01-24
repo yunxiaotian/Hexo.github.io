@@ -106,6 +106,74 @@
   </script>
 
 
+
+  <span id="musicControl">
+	<a id="mc_play" class="stop" onclick="play_music();">
+		<audio id="musicfx" loop="loop" autoplay="autoplay">
+			<source src="music/love story.mp3" type="audio/mpeg">
+		</audio>
+	</a>
+  </span>
+  
+  <script>
+		function play_music(){
+			if ($('#mc_play').hasClass('on')){
+				$('#mc_play audio').get(0).pause();
+				$('#mc_play').attr('class','stop');
+			}else{
+				$('#mc_play audio').get(0).play();
+				$('#mc_play').attr('class','on');
+			}
+			$('#music_play_filter').hide();
+			event.stopPropagation(); //阻止冒泡
+		}
+		function just_play(id){
+			$('#mc_play audio').get(0).play();
+			$('#mc_play').attr('class','on');
+			if (typeof(id)!='undefined'){
+				$('#music_play_filter').hide();
+			}
+			event.stopPropagation(); //阻止冒泡
+		}
+		function is_weixn(){
+			return false;
+			var ua = navigator.userAgent.toLowerCase();
+			if(ua.match(/MicroMessenger/i)=="micromessenger") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		var play_filter=document.getElementById('music_play_filter');
+		play_filter.addEventListener('click', function(){
+			just_play(1);
+		});
+		play_filter.addEventListener('touchstart', function(){
+			just_play(1);
+		});
+		play_filter.addEventListener('touchend', function(){
+			just_play(1);
+		});
+		play_filter.addEventListener('touchmove', function(){
+			just_play(1);
+		});
+		play_filter.addEventListener('mousedown', function(){
+			just_play(1);
+		});
+		play_filter.addEventListener('mouseup', function(){
+			just_play(1);
+		});
+		play_filter.addEventListener('mousemove',function(){
+			just_play(1);
+		});
+		window.onload=function(){
+			if (!is_weixn()){
+				just_play();
+			}
+		}
+	</script>
+  
+
   <meta name="description" content="乐不可极，乐极生悲；欲不可纵，纵欲成灾；酒饮微醉处，花看半开时。天道忌盈，业不求满。若业必求满，功必求盈，不生内变，必招外忧。人生在世，做人不必苛求，做事不必完美，乐不可享尽。为人做事懂得适可而止，对别人是一种宽容，对自己是一种余地。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人生知止而乐">

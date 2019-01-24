@@ -2007,7 +2007,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #212624;
+  background: #3287c3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2126,6 +2126,58 @@ img:hover {
 }
 .post-toc .nav .active-current > a:hover {
   color: #87daff;
+}
+@-webkit-keyframes reverseRotataZ {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes rotataZ {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+#musicControl {
+  position: fixed;
+  right: 31px;
+  bottom: 130px;
+  margin-top: 0;
+  display: inline-block;
+  z-index: 99999999;
+}
+#musicControl a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  background: url("/images/play.png") no-repeat;
+  background-size: 100%;
+}
+#musicControl a audio {
+  width: 100%;
+  height: 56px;
+}
+#musicControl a.stop {
+  background-position: left bottom;
+}
+#musicControl a.on {
+  background-position: 0px 1px;
+  -webkit-animation: reverseRotataZ 1.2s linear infinite;
+}
+#music_play_filter {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999998;
 }
 .footer {
   font-size: 14px;
