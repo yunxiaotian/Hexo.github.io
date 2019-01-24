@@ -2007,7 +2007,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fb0a7d;
+  background: #6f5deb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2132,7 +2132,7 @@ img:hover {
     -webkit-transform: rotateZ(0deg);
   }
   100% {
-    -webkit-transform: rotateZ(-360deg);
+    -webkit-transform: rotateZ(360deg);
   }
 }
 @-webkit-keyframes rotataZ {
@@ -2140,7 +2140,7 @@ img:hover {
     -webkit-transform: rotateZ(0deg);
   }
   100% {
-    -webkit-transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(-360deg);
   }
 }
 #musicControl {
@@ -2156,7 +2156,7 @@ img:hover {
   width: 25px;
   height: 25px;
   overflow: hidden;
-  background: url("/images/云小天.jpg") no-repeat;
+  background: url("/Hexo.github.io/images/云小天.jpg") no-repeat;
   background-size: 100%;
 }
 #musicControl a audio {
